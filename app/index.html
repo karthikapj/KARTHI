@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Healthcare Blockchain App</title>
+   <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <h1 style="color:		black">HEALTHCARE DAPP ON BLOCKCHAIN</h1>
+  <h4>PUBLIC ID : <span class="white"><span id="SenderBalance"></span> </h4>
+
+    <div class="btn-group" id="form-selector" align="center">
+
+		<button type="button" class="btn1 btn-selector active" id="sign-up-btn">Registration</button>
+		<button type="button" class="btn1 btn-selector" id="log-in-btn">Patient Details</button>
+		<button type="button" class="btn1 btn-selector" id="payments-btn">Receipt</button>
+
+
+	</div>
+	<div class="form" id="sign-up-form">
+		<h2 class="form-title" style="font-family: Comic Sans MS;
+font-style:italic;
+font-weight:100;"  ><center><strong>Enter Details</strong></center></h2>
+		<input type="text" class="input-std" id="pid" placeholder="Patient Id">
+		<input type="text" class="input-std" id="pname" placeholder="Patient Name">
+		<input type="text" class="input-std" id="loc" placeholder="Location">
+		<input type="text" class="input-std" id="disease" placeholder="Disease">
+		<input type="text" class="input-std" id="contact" placeholder="Phone">
+		<input type="text" class="input-std" id="doctor" placeholder="Doctor">
+		<input type="text" class="input-std" id="rgprice" placeholder="Registration Fee">
+		<button type="button" class="btn-submit" id="setvalue" onclick="set()">Submit Details!</button>
+	<span id="status"></span>
+	</div>
+
+
+  <div class="form" id="log-in-form">
+  <h2 class="form-title">Patient Details</h2>
+
+
+  <br>
+  <table>
+  <!-- <tr><td><b><label class = "black">Patient Id</label></td><td>:</td></b><td><span class="black" span id="getval1"></span></td></tr> -->
+  <input type="text" class="input-std" id="pid1" placeholder="Patient Id">
+  <tr><td><b><label class = "black">Patient Name</label></td><td>:</td></b><td><span class="black" span id="getval2"></span></td></tr>
+  <tr><td><b><label class = "black">Location</label></td><td>:</td></b><td><span class="black" span id="getval3"></span></td></tr>
+  <tr><td><b><label class = "black">Disease</label></td><td>:</td></b><td><span class="black" span id="getval4"></span></td></tr>
+  <tr><td><b><label class = "black">Phone</label></td><td>:</td></b><td><span class="black" span id="getval5"></span></td></tr>
+  <tr><td><b><label class = "black">Doctor</label></td><td>:</td></b><td><span class="black" span id="getval6"></span></td></tr>
+  <tr><td><b><label class = "black">Registration Fee</label><td>:</td></td></b><td><span class="black" span id="getval7"></span></td></tr>
+
+  </table>
+  <button type="button" class="btn-submit" id="getvalue" onclick="get();">Get Value</button>
+
+  <br><br>
+
+  <table align="center">
+  <tr>
+  <td><button type="button" id="printBlock" class="btn btn-selector" onclick="printBlock()">Print Block</button></td>
+  <td><button type="button" id="printTransaction" class="btn btn-selector" onclick="printTransaction()">Print Transaction</button></td></tr>
+  </table>
+
+  <br>
+  <h4> Block Number : <span class="blockclass" span id="blocknum"> </span></h4>
+  <br>
+<button type="button" class="btn-submit1" id="Approve-btn" align ="center" font="20px">Add Test Details</button>
+
+
+
+  <span id="status"></span>
+
+ </div>
+
+
+<div class="form" id="approve-form">
+     <h2 class="form-title">Test Results</h2>
+		<input type="text" class="input-std" id="testno" placeholder="Receipt Number">
+		<input type="text" class="input-std" id="group" placeholder="Blood Group">
+		<input type="text" class="input-std" id="charge" placeholder="Test Charge">
+		<input type="text" class="input-std" id="testdate" placeholder="Test Date">
+		<input type="text" class="input-std" id="result" placeholder="Result">
+
+		<button type="button" class="btn-submit" id="setvalue" onclick="setQ()">Submit</button>
+
+		<span id="status"></span>
+
+  </div>
+
+
+  <div class="form" id="payments-form">
+   <h2 class="form-title">Receipt</h2>
+  <table>
+  <input type="text" class="input-std" id="getpid" placeholder="Patient Id">
+  <tr><td><b><label class = "black">Patient Id</label></td><td>:</td></b><td><span class="black" span id="cgetval1"></span></td></tr>
+  <tr><td><b><label class = "black">Patient Name</label></td><td>:</td></b><td><span class="black" span id="cgetval2"></span></td></tr>
+  <tr><td><b><label class = "black">Location</label></td><td>:</td></b><td><span class="black" span id="cgetval3"></span></td></tr>
+  <tr><td><b><label class = "black">Disease</label></td><td>:</td></b><td><span class="black" span id="cgetval4"></span></td></tr>
+  <tr><td><b><label class = "black">Phone</label></td><td>:</td></b><td><span class="black" span id="cgetval5"></span></td></tr>
+  <tr><td><b><label class = "black">Doctor</label></td><td>:</td></b><td><span class="black" span id="cgetval6"></span></td></tr>
+  <tr><td><b><label class = "black">Registration Fee</label><td>:</td></td></b><td><span class="black" span id="cgetval7"></span></td></tr>
+  <input type="text" class="input-std" id="testnum" placeholder="Receipt number">
+  <tr><td><b><label class = "black">Receipt Number</label><td>:</td></td></b><td><span class="black" span id="cgetval8"></span></td></tr>
+  <tr><td><b><label class = "black">Blood Group</label><td>:</td></td></b><td><span class="black" span id="cgetval9"></span></td></tr>
+  <tr><td><b><label class = "black">Test Charge</label><td>:</td></td></b><td><span class="black" span id="cgetval10"></span></td></tr>
+  <tr><td><b><label class = "black">Test Date</label><td>:</td></td></b><td><span class="black" span id="cgetval11"></span></td></tr>
+  <tr><td><b><label class = "black">Result</label><td>:</td></td></b><td><span class="black" span id="cgetval12"></span></td></tr>
+  </table>
+  <button type="button" class="btn-submit" id="getcustval" onclick="getQ();cgetQ();">Get Value</button>
+  </div>
+
+
+
+
+
+   <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+
+</body>
+</html>
